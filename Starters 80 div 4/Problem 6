@@ -1,0 +1,36 @@
+//https://www.codechef.com/problems/PERMSUBSEQ
+
+#include <bits/stdc++.h>
+using namespace std;
+const int M=1e9+7;
+
+int main() {
+	int t;
+	cin>>t;
+	
+	while(t--){
+	    int n;
+	    cin>>n;
+	    
+	    long long a[n];
+	    unordered_map<int,int> mp;
+	    for(int i=0;i<n;i++){
+	        cin>>a[i];
+	        mp[a[i]]++;
+	    }
+	        
+	    long long prev=1;
+	    long long count=0;
+	    
+	    for(int i=1;i<=n;i++){
+	        long long temp=prev*mp[i];
+	        temp%=M;
+	        count+=temp;
+	        prev=temp;
+	        count%=M;
+	    }
+	    
+	    cout<<count<<"\n";
+	}
+	return 0;
+}
