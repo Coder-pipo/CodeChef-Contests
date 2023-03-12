@@ -1,0 +1,22 @@
+//https://www.codechef.com/problems/SINGLEUSE
+
+#include <iostream>
+#include<math.h>
+using namespace std;
+
+int main() {
+	int t;
+	cin>>t;
+	
+	while(t--){
+	    float h,x,y;
+	    cin>>h>>x>>y;
+	    
+	    int count=1;
+	    h=h-y;
+	    float val=(h/x);
+	    count+=ceil(val);
+	    cout<<count<<"\n";
+	}
+	return 0;
+}
